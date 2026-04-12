@@ -1,0 +1,43 @@
+.cta-banner {
+  background: #D85A30;
+  padding: 80px 32px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.cta-banner p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 32px;
+}
+
+.btn-white {
+  background: #fff;
+  color: #D85A30;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  background: #FAECE7;
+}
+
+@media (max-width: 640px) {
+  .cta-banner {
+    padding: 56px 20px;
+  }
+
+  .cta-banner h2 {
+    font-size: 26px;
+  }
+}
