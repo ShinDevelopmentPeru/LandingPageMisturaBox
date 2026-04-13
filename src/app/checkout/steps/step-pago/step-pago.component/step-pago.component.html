@@ -1,0 +1,71 @@
+<div class="step-pago">
+  <div class="step-header">
+    <h2>Datos de pago</h2>
+    <p class="sub">Tus datos están protegidos con encriptación SSL.</p>
+  </div>
+
+  <div class="resumen-pago">
+    <div class="resumen-label">Resumen</div>
+    <div class="resumen-plan">{{ checkout.planSeleccionado()?.nombre }}</div>
+    <div class="resumen-precio">
+      S/ {{ checkout.planSeleccionado()?.precio }}
+      <span>/ mes</span>
+    </div>
+  </div>
+
+  <div class="tarjetas-prueba">
+    <div class="prueba-label">Tarjetas de prueba</div>
+    <div class="prueba-item">
+      <span class="prueba-numero">4242 4242 4242 4242</span>
+      <span class="prueba-tag tag-exito">Pago exitoso</span>
+    </div>
+    <div class="prueba-item">
+      <span class="prueba-numero">4000 0000 0000 0002</span>
+      <span class="prueba-tag tag-error">Tarjeta declinada</span>
+    </div>
+  </div>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="pagar()">
+
+    <div class="form-group" [class.error]="isInvalid('nombreTarjeta')">
+      <label>Nombre en la tarjeta</label>
+      <input
+        type="text"
+        formControlName="nombreTarjeta"
+        placeholder="Ej. MARIA GARCIA"
+        style="text-transform: uppercase;"
+      />
+      @if (isInvalid('nombreTarjeta')) {
+        <span class="error-msg">Ingresa el nombre tal como aparece en la tarjeta</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Datos de tarjeta</label>
+      <div id="stripe-card" class="stripe-card-element"></div>
+      @if (stripeService.errorTarjeta()) {
+        <span class="error-msg">{{ stripeService.errorTarjeta() }}</span>
+      }
+    </div>
+
+    @if (errorPago()) {
+      <div class="error-banner">
+        {{ errorPago() }}
+      </div>
+    }
+
+    <div class="step-footer">
+      <button type="button" class="btn-volver" (click)="volver()" [disabled]="procesando()">
+        Volver
+      </button>
+      <button type="submit" class="btn-pagar" [disabled]="procesando()">
+        @if (procesando()) {
+          <span class="spinner"></span> Procesando...
+        } @else {
+          Pagar S/ {{ checkout.planSeleccionado()?.precio }}
+        }
+      </button>
+    </div>
+
+  </form>
+</div>

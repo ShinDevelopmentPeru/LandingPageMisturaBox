@@ -1,0 +1,36 @@
+<div class="step-plan">
+  <div class="step-header">
+    <h2>Elige tu plan</h2>
+    <p class="sub">Puedes cancelar cuando quieras. Sin letra chica.</p>
+  </div>
+
+  <div class="planes-grid">
+    @for (plan of checkout.planes; track plan.id) {
+      <div
+        class="plan-card"
+        [class.selected]="checkout.planSeleccionado()?.id === plan.id"
+        (click)="seleccionar(plan)"
+      >
+        <div class="plan-tag" [class]="'tag-' + plan.id">{{ plan.tag }}</div>
+        <div class="plan-nombre">{{ plan.nombre }}</div>
+        <div class="plan-desc">{{ plan.descripcion }}</div>
+        <div class="plan-precio">
+          S/ {{ plan.precio }} <span>/ mes</span>
+        </div>
+        <div class="plan-check">
+          @if (checkout.planSeleccionado()?.id === plan.id) { ✓ }
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="step-footer">
+    <button
+      class="btn-continuar"
+      [disabled]="!checkout.planSeleccionado()"
+      (click)="continuar()"
+    >
+      Continuar
+    </button>
+  </div>
+</div>

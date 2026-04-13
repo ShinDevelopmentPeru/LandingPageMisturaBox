@@ -1,0 +1,110 @@
+.checkout-wrapper {
+  min-height: 100vh;
+  background: #FAEEDA;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-header {
+  background: #fff;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.checkout-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #D85A30;
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.step.active .step-circle {
+  border-color: #D85A30;
+  color: #D85A30;
+}
+
+.step.done .step-circle {
+  background: #D85A30;
+  border-color: #D85A30;
+  color: #fff;
+}
+
+.step span {
+  font-size: 11px;
+  color: #999;
+}
+
+.step.active span {
+  color: #D85A30;
+  font-weight: 500;
+}
+
+.step-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  margin-bottom: 14px;
+  transition: background 0.2s ease;
+}
+
+.step-line.done {
+  background: #D85A30;
+}
+
+.checkout-body {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+@media (max-width: 640px) {
+  .checkout-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  .checkout-body {
+    padding: 32px 20px;
+  }
+
+  .step-line {
+    width: 24px;
+  }
+}

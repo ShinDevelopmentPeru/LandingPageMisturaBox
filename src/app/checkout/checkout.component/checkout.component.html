@@ -1,0 +1,43 @@
+<div class="checkout-wrapper">
+
+  <header class="checkout-header">
+    <a class="checkout-logo" routerLink="/">Mistura Box</a>
+    <div class="checkout-steps">
+      <div class="step" [class.active]="checkout.stepActual() >= 1" [class.done]="checkout.stepActual() > 1">
+        <div class="step-circle">
+          @if (checkout.stepActual() > 1) { ✓ } @else { 1 }
+        </div>
+        <span>Plan</span>
+      </div>
+      <div class="step-line" [class.done]="checkout.stepActual() > 1"></div>
+      <div class="step" [class.active]="checkout.stepActual() >= 2" [class.done]="checkout.stepActual() > 2">
+        <div class="step-circle">
+          @if (checkout.stepActual() > 2) { ✓ } @else { 2 }
+        </div>
+        <span>Datos</span>
+      </div>
+      <div class="step-line" [class.done]="checkout.stepActual() > 2"></div>
+      <div class="step" [class.active]="checkout.stepActual() >= 3" [class.done]="checkout.stepActual() > 3">
+        <div class="step-circle">
+          @if (checkout.stepActual() > 3) { ✓ } @else { 3 }
+        </div>
+        <span>Pago</span>
+      </div>
+      <div class="step-line" [class.done]="checkout.stepActual() > 3"></div>
+      <div class="step" [class.active]="checkout.stepActual() >= 4">
+        <div class="step-circle">4</div>
+        <span>Confirmación</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-body">
+    @switch (checkout.stepActual()) {
+      @case (1) { <app-step-plan /> }
+      @case (2) { <app-step-datos /> }
+      @case (3) { <app-step-pago /> }
+      @case (4) { <app-step-confirmacion /> }
+    }
+  </main>
+
+</div>

@@ -1,0 +1,133 @@
+.step-datos {
+  width: 100%;
+  max-width: 560px;
+}
+
+.step-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.step-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 15px;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input::placeholder {
+  color: #bbb;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #D85A30;
+}
+
+.form-group.error input,
+.form-group.error select {
+  border-color: #E24B4A;
+}
+
+.error-msg {
+  font-size: 12px;
+  color: #E24B4A;
+}
+
+.step-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.btn-volver {
+  background: transparent;
+  color: #666;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn-volver:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.btn-continuar {
+  background: #D85A30;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-continuar:hover {
+  background: #993C1D;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .step-footer {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .btn-volver,
+  .btn-continuar {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,147 @@
+.step-plan {
+  width: 100%;
+  max-width: 720px;
+}
+
+.step-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.step-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 15px;
+  color: #666;
+}
+
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.plan-card {
+  background: #fff;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 22px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  border-color: #D85A30;
+}
+
+.plan-card.selected {
+  border-color: #D85A30;
+  background: #FAECE7;
+}
+
+.plan-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+
+.tag-exploradora { background: #FAECE7; color: #993C1D; }
+.tag-gourmet     { background: #FAEEDA; color: #BA7517; }
+.tag-coleccion   { background: #EAF3DE; color: #3B6D11; }
+
+.plan-nombre {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.plan-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.plan-precio {
+  font-size: 22px;
+  font-weight: 600;
+  color: #D85A30;
+}
+
+.plan-precio span {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+.plan-check {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #D85A30;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.plan-card.selected .plan-check {
+  opacity: 1;
+}
+
+.step-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-continuar {
+  background: #D85A30;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-continuar:hover:not(:disabled) {
+  background: #993C1D;
+}
+
+.btn-continuar:disabled {
+  background: rgba(0, 0, 0, 0.15);
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .planes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-footer {
+    justify-content: stretch;
+  }
+
+  .btn-continuar {
+    width: 100%;
+  }
+}

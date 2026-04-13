@@ -21,17 +21,7 @@ import { Bannerfinal } from '../../components/landing/bannerfinal/bannerfinal';
     Bannerfinal
 
 ],
-  template: `
-    <app-navbar/>
-    <app-intro />
-    <app-howitworks />
-    <app-boxes />
-    <app-products /> 
-    <app-testimonials/>
-    <app-bannerfinal/> 
-    <app-footer/>
-    
-  `,
+  templateUrl: './landingpage.html',
   styleUrl: './landingpage.css',
 })
 export class Landingpage {

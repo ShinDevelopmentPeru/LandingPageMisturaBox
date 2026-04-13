@@ -1,0 +1,87 @@
+<div class="step-datos">
+  <div class="step-header">
+    <h2>Tus datos</h2>
+    <p class="sub">¿A dónde enviamos tu caja?</p>
+  </div>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="continuar()">
+    <div class="form-row">
+      <div class="form-group" [class.error]="isInvalid('nombre')">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" placeholder="Ej. María"/>
+        @if (isInvalid('nombre')) {
+          <span class="error-msg">Ingresa tu nombre</span>
+        }
+      </div>
+      <div class="form-group" [class.error]="isInvalid('apellido')">
+        <label>Apellido</label>
+        <input type="text" formControlName="apellido" placeholder="Ej. García"/>
+        @if (isInvalid('apellido')) {
+          <span class="error-msg">Ingresa tu apellido</span>
+        }
+      </div>
+    </div>
+
+    <div class="form-group" [class.error]="isInvalid('email')">
+      <label>Correo electrónico</label>
+      <input type="email" formControlName="email" placeholder="Ej. maria@correo.com"/>
+      @if (isInvalid('email')) {
+        <span class="error-msg">Ingresa un correo válido</span>
+      }
+    </div>
+
+    <div class="form-group" [class.error]="isInvalid('telefono')">
+      <label>Teléfono</label>
+      <input type="tel" formControlName="telefono" placeholder="Ej. 987654321"/>
+      @if (isInvalid('telefono')) {
+        <span class="error-msg">Ingresa un teléfono válido de 9 dígitos</span>
+      }
+    </div>
+
+    <div class="form-group" [class.error]="isInvalid('direccion')">
+      <label>Dirección</label>
+      <input type="text" formControlName="direccion" placeholder="Ej. Av. Larco 123"/>
+      @if (isInvalid('direccion')) {
+        <span class="error-msg">Ingresa tu dirección</span>
+      }
+    </div>
+
+    <div class="form-group" [class.error]="isInvalid('distrito')">
+      <label>Distrito</label>
+      <select formControlName="distrito">
+        <option value="" disabled selected>Selecciona tu distrito</option>
+        <optgroup label="Lima">
+          <option>Miraflores</option>
+          <option>San Isidro</option>
+          <option>Surco</option>
+          <option>Barranco</option>
+          <option>La Molina</option>
+          <option>San Borja</option>
+          <option>Pueblo Libre</option>
+          <option>Magdalena</option>
+          <option>Jesús María</option>
+          <option>Lince</option>
+          <option>San Miguel</option>
+          <option>Callao</option>
+        </optgroup>
+        <optgroup label="Provincias">
+          <option>Trujillo</option>
+          <option>Arequipa</option>
+          <option>Cusco</option>
+          <option>Piura</option>
+          <option>Chiclayo</option>
+          <option>Iquitos</option>
+          <option>Huancayo</option>
+        </optgroup>
+      </select>
+      @if (isInvalid('distrito')) {
+        <span class="error-msg">Selecciona tu distrito</span>
+      }
+    </div>
+
+    <div class="step-footer">
+      <button type="button" class="btn-volver" (click)="volver()">Volver</button>
+      <button type="submit" class="btn-continuar">Continuar</button>
+    </div>
+  </form>
+</div>
