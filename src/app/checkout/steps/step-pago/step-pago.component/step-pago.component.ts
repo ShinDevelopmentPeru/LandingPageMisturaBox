@@ -49,7 +49,7 @@ export class StepPagoComponent implements OnInit, OnDestroy {
       this.errorPago.set('Por favor completa los datos de tu tarjeta.');
       return;
     }
-this.procesando.set(true);
+    this.procesando.set(true);
     this.errorPago.set(null);
 
     const nombreTarjeta = this.form.get('nombreTarjeta')?.value ?? '';
@@ -61,9 +61,6 @@ this.procesando.set(true);
       return;
     }
 
-    // Token generado exitosamente
-    // Aquí iría la llamada al backend con el token
-    // Por ahora simulamos el éxito
     console.log('Token de Stripe generado:', token);
     this.checkout.setPagoExitoso();
     this.checkout.avanzarStep();

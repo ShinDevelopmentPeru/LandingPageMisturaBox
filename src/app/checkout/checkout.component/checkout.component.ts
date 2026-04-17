@@ -8,7 +8,7 @@ import { StepConfirmacionComponent } from '../steps/step-confirmacion/step-confi
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-checkout.component',
+  selector: 'app-checkout',
   imports: [
     CommonModule,
     RouterLink,

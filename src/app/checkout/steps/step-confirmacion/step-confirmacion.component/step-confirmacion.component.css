@@ -1,0 +1,159 @@
+.step-confirmacion {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.icono-exito svg {
+  width: 64px;
+  height: 64px;
+}
+
+.confirmacion-header {
+  text-align: center;
+}
+
+.confirmacion-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.resumen-card {
+  width: 100%;
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumen-titulo {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D85A30;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.resumen-fila:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.resumen-label {
+  font-size: 13px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.resumen-valor {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-align: right;
+}
+
+.resumen-precio {
+  font-size: 16px;
+  font-weight: 600;
+  color: #D85A30;
+}
+
+.resumen-precio span {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+}
+
+.proximos-pasos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paso {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.paso-num {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FAECE7;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 32px;
+}
+
+.paso-titulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.paso-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.confirmacion-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-inicio {
+  background: #D85A30;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 36px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-inicio:hover {
+  background: #993C1D;
+}
+
+@media (max-width: 640px) {
+  .resumen-fila {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .resumen-valor {
+    text-align: left;
+  }
+}

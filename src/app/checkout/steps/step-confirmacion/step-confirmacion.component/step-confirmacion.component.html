@@ -1,1 +1,76 @@
-<p>step-confirmacion.component works!</p>
+<div class="step-confirmacion">
+
+  <div class="icono-exito">
+    <svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2.5">
+      <circle cx="24" cy="24" r="24" fill="#D85A30"/>
+      <path d="M14 24l7 7 13-14" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="confirmacion-header">
+    <h2>¡Suscripción confirmada!</h2>
+    <p class="sub">Gracias por unirte a Mistura Box. Tu primera caja está en camino.</p>
+  </div>
+
+  <div class="resumen-card">
+    <div class="resumen-titulo">Resumen de tu pedido</div>
+    <div class="resumen-fila">
+      <span class="resumen-label">Plan</span>
+      <span class="resumen-valor">{{ checkout.planSeleccionado()?.nombre }}</span>
+    </div>
+    <div class="resumen-fila">
+      <span class="resumen-label">Monto</span>
+      <span class="resumen-valor resumen-precio">
+        S/ {{ checkout.planSeleccionado()?.precio }}
+        <span>/ mes</span>
+      </span>
+    </div>
+    <div class="resumen-fila">
+      <span class="resumen-label">Nombre</span>
+      <span class="resumen-valor">
+        {{ checkout.datosPersonales()?.nombre }} {{ checkout.datosPersonales()?.apellido }}
+      </span>
+    </div>
+    <div class="resumen-fila">
+      <span class="resumen-label">Correo</span>
+      <span class="resumen-valor">{{ checkout.datosPersonales()?.email }}</span>
+    </div>
+    <div class="resumen-fila">
+      <span class="resumen-label">Dirección</span>
+      <span class="resumen-valor">
+        {{ checkout.datosPersonales()?.direccion }}, {{ checkout.datosPersonales()?.distrito }}
+      </span>
+    </div>
+  </div>
+
+  <div class="proximos-pasos">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <div class="paso-texto">
+        <div class="paso-titulo">Confirmación por correo</div>
+        <div class="paso-desc">Te enviamos un email con los detalles de tu suscripción.</div>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <div class="paso-texto">
+        <div class="paso-titulo">Preparamos tu caja</div>
+        <div class="paso-desc">Nuestro equipo selecciona los mejores productos para ti.</div>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <div class="paso-texto">
+        <div class="paso-titulo">Envío a tu puerta</div>
+        <div class="paso-desc">Lima en 48h, provincias en 3-5 días hábiles.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirmacion-footer">
+    <a routerLink="/" class="btn-inicio" (click)="volverAlInicio()">
+      Volver al inicio
+    </a>
+  </div>
+
+</div>
