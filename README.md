@@ -26,6 +26,7 @@ El flujo completo incluye:
 ## Tecnologías utilizadas
 
 | Tecnología | Rol en el proyecto |
+|---|---|
 | **Angular 19** | Framework principal del frontend |
 | **TypeScript** | Lenguaje de programación |
 | **Stripe.js** | Tokenización segura de pagos |
